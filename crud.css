@@ -1,0 +1,161 @@
+
+
+:root {
+    --bg: #f5f7fa;
+    --bg-dark: #1c1c1e;
+    --text: #222;
+    --text-dark: #eee;
+    --primary: #6c5ce7;
+    --primary-hover: #a29bfe;
+    --danger: #d63031;
+    --danger-hover: #ff7675;
+    --edit: #00b894;
+    --edit-hover: #55efc4;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    transition: all 0.3s ease-in-out;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 95%;
+    max-width: 1200px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+thead {
+    background: linear-gradient(to right, var(--primary), #341f97);
+    color: white;
+    font-weight: bold;
+}
+
+thead th {
+    padding: 16px;
+    text-align: left;
+}
+
+tbody tr {
+    transition: background 0.3s ease;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f1f2f6;
+}
+
+tbody tr:hover {
+    background-color: #dfe6e9;
+    transform: scale(1.005);
+    transition: 0.2s ease;
+}
+
+td {
+    padding: 14px 18px;
+    font-size: 15px;
+    border-bottom: 1px solid #dcdde1;
+}
+
+button {
+    border: none;
+    border-radius: 8px;
+    padding: 6px 14px;
+    font-size: 14px;
+    margin-right: 8px;
+    cursor: pointer;
+    color: white;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.editBtn {
+    background-color: var(--edit);
+}
+
+.editBtn:hover {
+    background-color: var(--edit-hover);
+    transform: scale(1.05);
+}
+
+.deleteBtn {
+    background-color: var(--danger);
+}
+
+.deleteBtn:hover {
+    background-color: var(--danger-hover);
+    transform: scale(1.05);
+}
+
+/* Dark mode (optional, toggled with class) */
+body.dark {
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
+}
+
+body.dark table {
+    background-color: #2f3542;
+    color: white;
+}
+
+body.dark tbody tr:nth-child(even) {
+    background-color: #3d3d3d;
+}
+
+body.dark tbody tr:hover {
+    background-color: #444;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tbody tr {
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+    td {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+    }
+
+    td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        flex: 1;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
