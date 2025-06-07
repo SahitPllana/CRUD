@@ -53,7 +53,6 @@ function renderTable() {
         });
     });
 
-    // Attach edit handlers
     document.querySelectorAll(".editBtn").forEach(btn => {
         btn.addEventListener("click", e => {
             const index = e.currentTarget.dataset.index;
