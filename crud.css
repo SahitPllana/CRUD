@@ -98,7 +98,6 @@ button {
     transform: scale(1.05);
 }
 
-/* Dark mode (optional, toggled with class) */
 body.dark {
     background-color: var(--bg-dark);
     color: var(--text-dark);
@@ -117,7 +116,6 @@ body.dark tbody tr:hover {
     background-color: #444;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     table, thead, tbody, th, td, tr {
         display: block;
@@ -147,7 +145,6 @@ body.dark tbody tr:hover {
     }
 }
 
-/* Animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
